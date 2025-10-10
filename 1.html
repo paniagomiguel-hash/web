@@ -1,0 +1,132 @@
+<html>
+<head>
+    <title>Meu primeiro HTML</title>
+    <style>
+        img{width: 300px;
+            border-radius: 15%;
+        }
+        p{color: blue;}
+        h1{color: red;}
+        ul{background-color: lightgrey; padding: 20px;}
+        
+        table, td, th{border: 1px solid black;
+                  border-collapse: collapse;}
+    </style>
+</head>
+<body>
+    <!-- isto é um comentário -->
+   
+   <hr>
+   <p>Lorem <em>ipsum</em>, <strong> dolor sit </strong>amet consectetur adipisicing elit. Maiores laudantium accusamus pariatur totam numquam quibusdam itaque eveniet id consectetur?
+    Debitis eaque suscipit exercitationem corporis quidem nemo qui alias numquam voluptatum.</p>
+
+<ul>
+    <li>git init - cria um repositório em um diretório</li>
+    <li>git add - adicionar modificações do workcopy worktree ao stage</li>
+    <li>git commit -m "asdf" - cria um commit a partir do stage</li>
+    <li>git log - exibe os commits do nosso repósitorio local</li>
+    <li>git log --oneline --all --graph</li>
+    <li>git status - exibe o estado do <strong>WK</strong></li>
+    <li>git checkout -b nova-branch branch|hash - cria uma nova branch apontando para a branch ou hash informado</li>
+    <li>git reset --hard - restaura os arquivos trakeados ao estado do HEAD </li>
+    <li>git push remote branch</li>
+    <li>git config user.name = "Nome"</li>
+    <li>git config user.email = "Email</li>
+    <li>git clone url - faz o clone de um repositório</li>
+</ul>
+
+<hr>
+
+<h1> Título de nível 1</h1>
+   <h2> Título de nível 2</h2>
+   <h3> Título de nível 3</h3>
+   <h4> Título de nível 4</h4>
+   <h5> Título de nível 5</h5>
+   <h6> Titulo de nível 6</h6> 
+   <p>Programação para internet</p>
+   <p>Lorem <em>ipsum</em>, <strong> dolor sit </strong>amet consectetur adipisicing elit. Maiores laudantium accusamus pariatur totam numquam quibusdam itaque eveniet id consectetur?
+    Debitis eaque suscipit exercitationem corporis quidem nemo qui alias numquam voluptatum.</p>
+   <span> isto é somente um texto</span><span> outro texto na mesma linha</span>
+
+   <hr>
+
+   <h1>Listas</h1>
+   <p>O HTML possui listas não ordenadas e listas ordenadas, as listas ordenadas não ordenadas são definidas com a tag &lt;ul&gt;
+    enquanto usamos &lt;ol&gt; para listas ordenadas. 
+
+    <ul>
+        <li>Panqueca</li>
+        <li>Pera</li>
+        <li>Uva</li>
+        <li>Maçã</li>
+    </ul>
+    <ol start="26" type = "a">
+        <li>Panqueca</li>
+        <li>Pera</li>
+        <li>Uva</li>
+        <li>Maçã</li>
+    </ol>
+    <dl>
+        <dt>Bacon</dt>
+        <dd>Fundamental</dd>
+        <dt>Porco</dt>
+        <dd>É a incrível máquina que transforma lavagem em bacon</dd>
+        <dt>Café</dt>
+        <dd>Bebida fundamental a vida!</dd>
+        <dt>Água</dt>
+        <dd>Segunda bebida fundamental a vida!</dd>
+    </dl>
+
+    <h1 style="color: #ff0000">Tags de formatação de textos</h1>
+        <p>Lorem <strong>ipsum dolor</strong>
+             sit amet <sub>consectetur </sub>
+             adipisicing elit. <sup>autem itaque</sup> 
+             <mark>eius, cupiditate</mark> quis nesciunt quibusdam aliquid excepturi suscipit doloribus!
+             <br> Dolores eveniet velit itaque aperiam mollitia rem voluptates nesciunt quia.<br>
+             10<sub>2</sub>=2<sub>10</sub></p>
+
+    <h1>Links e Imagens</h1>
+    <a target="_blank" href="https://www.google.com">
+    Google</a>
+    <a href="https://www.googlee.com">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique incidunt praesentium maxime eligendi veritatis dolorum, adipisci laboriosam nesciunt sunt vero iusto, sequi quae sint necessitatibus facilis. Aperiam quaerat totam aliquam!</p>
+    </a>
+    <br>
+    <img src="./imgs/power rangers.webp"
+    alt="Power Rangers">
+
+
+    <img src="https://wallpapers.com/images/hd/dragon-ball-pictures-1fqnalnytob0klx9.jpg" alt="Descrição da Imagem">
+
+    <h1>Tabelas no HTML</h1>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Profissão</th>
+        </tr>
+        <tr>
+            <td>João</td>
+            <td>20</td>
+            <td>Estudante</td>
+        </tr>
+        <tr>
+            <td>Maria</td>
+            <td>30</td>
+            <td>Desenvolvedora</td>
+        </tr>
+    </table>
+
+    <h1>Formulários</h1>
+
+    <form action="https://google.com/search">
+        <input type="text" value="" placeholder="Entre com seu nome">
+        <label for="q">Query de busca</label>
+        <input id="q" name="q" type="text" value="" placeholder="Campo de pesquisa">
+        <input id="q" name="pipoca" type="date" draggable="true" value="2002-02-23">
+        <input type="submit" value="Buscar">
+    </form>
+
+
+    </body>
+</html>

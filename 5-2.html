@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positions HTML</title>
+    <style>
+        *{border: 1px solid black;}
+        #Power{
+            float: left;
+        }
+        html,body{border-color: red;}
+        .box{display: inline-block;
+            width: 100px;
+            height: 100px;
+            position: static;
+        }
+        #box2{ position: relative;
+            top: 30px;
+            left: 30px;
+        }
+        #box3{position:absolute;
+            top: 50px;
+        }
+        .container{
+            position: relative;
+        }
+        #box4{position: fixed;
+            background-color: chartreuse;
+            right: 10px;
+            bottom: 10px;
+
+    }
+
+    </style>
+</head>
+<body>
+    <div class="Voltar">
+        <a href="./index.html"> <img src="./imgs/voltar.png" alt="Voltar" style="width: 40px;"></a>
+    </div>
+    <h1>Positions HTML</h1>
+    
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae at voluptatem quidem eius, veritatis quod animi explicabo nulla, ea obcaecati, et vel deserunt eaque ut iusto aliquid? Laboriosam, cupiditate officiis.</p>
+
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid ea amet molestias officia necessitatibus recusandae, deserunt et obcaecati delectus sit distinctio ipsa, voluptatibus iusto quos aperiam veritatis. Dolorum, sunt assumenda.</p>
+
+    <span>Lorem</span>
+    <img id="Power"src="./imgs/power rangers.webp" alt="Power Rangers" width="250px">
+    <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga nemo quis repellendus quaerat cupiditate fugiat, illum reprehenderit corporis incidunt sint itaque tempore error nam sed nobis inventore repudiandae atque distinctio.</span>
+
+    <div class="container">
+        <div id="box1" class="box">box1</div>
+        <div id="box2" class="box">box2</div>
+        <div id="box3" class="box">box3</div>
+        <div id="box4" class="box">box4</div>
+        <div id="box5" class="box">box5</div>
+
+
+    </div>
+    
+</body>
+</html>

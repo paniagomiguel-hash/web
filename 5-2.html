@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Positions HTML</title>
     <style>
-        *{border: 1px solid black;}
+        *:not(img):not(a){border: 1px solid black;}
         #Power{
             float: left;
         }
@@ -24,13 +24,21 @@
         }
         .container{
             position: relative;
+            top: 120px;
         }
         #box4{position: fixed;
             background-color: chartreuse;
             right: 10px;
             bottom: 10px;
+        }
+        .Voltar img {
+            border: none;
+        }
 
-    }
+        img {
+            border: none;
+        }
+
 
     </style>
 </head>

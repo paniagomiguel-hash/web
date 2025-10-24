@@ -10,23 +10,42 @@
             float: left;
         }
         html,body{border-color: red;}
-        .box{display: inline-block;
+        .box{display: inline-block; /*Ficam um do lado do outro*/
             width: 100px;
             height: 100px;
             position: static;
+            
         }
         #box2{ position: relative;
-            top: 30px;
-            left: 30px;
-        }
-        #box3{position:absolute;
-            top: 50px;
+            top: 100px;
+            
         }
         .container{
             position: relative;
+            margin-top: 130px; /*Distancia do elemento em relação ao topo*/
+        }
+        #box3{
+            position:absolute;
+            background-color: gray;
+            top: 1px;
+            left: 10px;
+            z-index: -1;
+        }
+        #box4{
+            position: fixed;
+            background-color: magenta;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /*Centraliza itens no meio da página*/
+            z-index: -1; /*Mexe com as camadas do html, passando para frente ou para trás*/
+        }
+        /*
+        .container{
+            margin-top: 130px;
+            position: static;
             top: 120px;
         }
-        #box4{position: fixed;
+        #box4{position: static;
             background-color: chartreuse;
             right: 10px;
             bottom: 10px;
@@ -34,7 +53,7 @@
         .Voltar img {
             border: none;
         }
-
+*/
         img {
             border: none;
         }
@@ -47,6 +66,10 @@
         <a href="./index.html"> <img src="./imgs/voltar.png" alt="Voltar" style="width: 40px;"></a>
     </div>
     <h1>Positions HTML</h1>
+    <p>Static: não funciona top, left, right e bottom. Retrocompatibilidade. Todo elemento vem por padrão como static.</p>
+    <p>Display: none, inline(se comporta como texto), block, inline-block</p>
+    <p>Medida % em css vem em relação ao pai do elemento</p>
+
     
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae at voluptatem quidem eius, veritatis quod animi explicabo nulla, ea obcaecati, et vel deserunt eaque ut iusto aliquid? Laboriosam, cupiditate officiis.</p>
 

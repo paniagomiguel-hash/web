@@ -1,0 +1,79 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.box{
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    background-color: gold;
+    font-size: 1.5rem;
+    animation-name: animation;
+    animation-duration: 5s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+}
+@keyframes animation {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.3);
+    }
+    50% {
+        transform: rotate(45deg);
+        background: dodgerblue;
+    }
+    100% {
+        transform: rotate(0);
+        color: white;
+        background-color: tomato;
+    }
+    
+}
+
+
+
+
+
+
+
+
+/*
+Funções do transform:
+
+    Scale: aumenta ou diminui o elemento | scale(0.5) (diminui pela metade).
+
+    Skew: torce o elemento | skew(15deg) (torce para direita), caso for negativo irá torcer para a esquerda.
+
+    Rotate: gira o elemento | rotate(45deg) (roda para a direita), caso for negativo irá rodar para a esquerda.
+
+    Translate: muda a posição do elemento | translate(25px) (se transloca para o eixo horizontal a direita), um valor negativo irá para direita.
+    Se for colocado um segundo valor translate(-25px, 50px), nesse caso irá se deslocar 25 pixels para a esquerda e 50 pixels para baixo.
+    Essa função é um atalho da função translateX e Y.
+
+    É possível misturar diversos elementos de transform de uma só vez, porém a ordem das funções altera o resultado.
+
+    TranslateX: muda o elemento no eixo vertical | translateX(25px)
+
+    TranslateY: muda o elemento no eixo horizontal | translateY(25px)
+
+    TranslateZ: afasta ou aproxima o elemento dos nossos olhos | translateZ(-50px).
+    É necessário utilizar a função perspective antes dessa, se não o translate não irá funcionar.
+
+    Perspective: cria uma distancia entre o elemento e a minha visão | perspective(200px)
+
+Funções do transition:
+
+    Ease-in: começa devagar e termina rápido.
+
+    Ease-out: começa rápido e termina devagar.
+
+    Cubic-bezier: escolher a velocidade em cada ponto por meio de graficos
+
+    O segundo valor colocado dentro do transform, vai ditar o tempo de espera para acontecer a transição.
+
+*/

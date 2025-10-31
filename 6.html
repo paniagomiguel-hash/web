@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aula 06 - Flex</title>
     <style>
-        .container{ /*Flez utiliza regras diferentes */
+        .container{ /*Flex utiliza regras diferentes */
             display: flex;
             flex-direction: row; /*faz os blocos se posicionarem abaixo quando da zoom*/
             justify-content: center; /*eixo vertical, acompanha o fluxo do flex-direction*/
             align-content: center; /* controla o espaçamento entre as linhas */
-            align-items: center; /*eixo horizontal, sempre estará no eixo perpendicular ao flex-direction, alinha os itens à linha*/
+            align-items: center; /*eixo horizontal, sempre estará no eixo perpendicular ao flex-direction, alinha os itens à linha, pega todos os itens*/
             flex-wrap: wrap; /*Para quebrar linha*/
             border: 1px solid red;
             height: 100vh; /*view height / view width */
@@ -38,6 +38,9 @@
     </style>
 </head>
 <body>
+    <div class="Voltar">
+        <a href="./index.html"> <img src="./imgs/voltar.png" alt="Voltar" style="width: 40px;"></a>
+    </div>
     <!--div.container>div#box$.box{$}*5-->
     <div class="container">
         <div id="box1" class="box">1</div>

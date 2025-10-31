@@ -3,45 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
+
+    <style>
+        body{
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1{
+            color: rgb(48, 48, 48);
+            margin-bottom: 40px;
+        }
+        .card{
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 500px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: left;
+            
+            
+        }
+        .card:hover{
+                background-color: rgb(223, 223, 223);
+                transition: 0.3s;
+                
+        }
+        a{
+            color: rgb(63, 36, 218);
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+        dd{
+            margin-left: 0;
+            color: #555;
+        }
+    </style>
     <title>Aulas de Programação para Internet</title>
 </head>
 <body>
     
     <h1>Aulas de Programação para Internet</h1>
 
-    <dl>
-        <dt><a href="./1.html">Aula 01</a></dt> 
-        <dd>História da WEB.</dd>
-<br>
-<hr>
-        <dt><a href="./2.html">Aula 02</a></dt>
+    <div class="card">
+        <a href="./1.html">Aula 01</a>
+        <dd>História da internet e da web.</dd>
+    </div>
+
+    <div class="card">
+        <a href="./2.html">Aula 02</a>
         <dd>Introdução ao GIT.</dd>
-<br>
-<hr>
-        <dt><a href="./3.html">Aula 03</a></dt>
+    </div>
+
+    <div class="card">
+        <a href="./3.html">Aula 03</a>
         <dd>Html básico: listas, tabelas, tags de formatação de texto, links, imagens e formulários.</dd>
-<br>
-<hr>
-        <dt><a href="./4.html">Aula 04</a></dt>
-        <dd>Formulário e tabelas + introdução CSS.</dd>
-<br>
-        <dt><a href="./4-1.html">Aula 04.1</a></dt>
+    </div>
+
+    <div class="card">
+        <a href="./4.html">Aula 04</a>
+        <dd>Formulário e tabelas + introdução CSS.</dd><br>
+        <a href="./4-1.html">Aula 04.1</a>
         <dd>Estilização com CSS.</dd>
-<br>
-<hr>
-        <dt><a href="./5.html">Aula 05</a></dt>
-        <dd>Declarando CSS em um documento.</dd>
-<br>
+    </div>
 
-        <dt><a href="./5-1.html">Aula 05.1</a></dt>
-        <dd>Bordas, classes e IDs em CSS.</dd>
-<br>
+    <div class="card">
+        <a href="./5.html">Aula 05</a>
+        <dd>Declarando CSS em um documento.</dd><br>
+        <a href="./5-1.html">Aula 05.1</a>
+        <dd>Bordas, classes e IDs em CSS.</dd><br>
+        <a href="./5-2.html">Aula 05.2</a>
+        <dd>Positions HTML.</dd>
+    </div>
 
-        <dt><a href="./5-2.html">Aula 05.2</a></dt>
-        <dd>Posisions HTML.</dd>
-<br>
-<hr>
-    </dl>
+    <div class="card">
+        <a href="./6.html">Aula 06</a>
+        <dd>Flex.</dd>
+    </div>
 
+    <div class="card">
+        <a href="./7.html">Aula 07</a>
+        <dd>Introdução animations.</dd><br>
+        <a href="./7-1.html">Aula 07.1</a>
+        <dd>GRID layout.</dd><br>
+        <a href="./7-2.html">Aula 07.2</a>
+        <dd>Exemplo de layout com GRID.</dd>
+    </div>
 </body>
 </html>

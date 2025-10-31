@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo layout GRID</title>
+    <style>
+        .container{
+            height: 100vh;
+            width: 100vw;
+            display: grid;
+            grid-template-areas: 
+            "header header header header"
+            "main main . sidebar"
+            "footer footer footer footer"
+            ;
+            font-size: 2rem;
+        }
+        @media screen and (max-width: 600px){
+            .container {
+                grid-template-areas: 
+                "header"
+                "main"
+                "sidebar"
+                "footer"
+                ;
+            }
+            
+        }
+
+        @media screen and (min-width: 601px) and (max-width: 800px) {
+            .container {
+                grid-template-areas: 
+                "header header"
+                "main sidebar"
+                "footer footer"
+                ;
+            }
+        }
+
+        /*.container{
+            height: 100vh;
+            width: 100vw;
+            display: grid;
+            grid-template-areas: 
+            "header header header header"
+            "main main . sidebar"
+            "footer footer footer footer"
+            ;
+            font-size: 2rem;
+            
+        }*/
+        .header{
+            grid-area: header;
+            background-color: #f77002;
+        }
+        .main{
+            grid-area: main;
+            background-color: #2121f7;
+        }
+        .sidebar{
+            grid-area: sidebar;
+            background-color: #fc2222;
+        }
+        .footer{
+            grid-area: footer;
+            background-color: #17e017;
+        }
+    </style>
+</head>
+<body>
+    <div class="Voltar">
+        <a href="./index.html"> <img src="./imgs/voltar.png" alt="Voltar" style="width: 40px;"></a>
+    </div>
+    <h1>Exemplo de layout com GRID</h1>
+    <div class="container">
+        <div class="box header">Cabeçalho</div>
+        <div class="box main">Main</div>
+        <div class="box sidebar">Side Bar</div>
+        <div class="box footer">Footer</div>
+    </div>
+</body>
+</html>

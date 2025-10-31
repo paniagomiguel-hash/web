@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alinhar ao centro</title>
+
+    <style>
+        /* o flex foi feito para funcionar com container, nao com itens sozinhos */
+        body{
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            height: 100vh;
+
+        }
+        #foguete{
+            font-size: 100px;
+            animation: subir 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+        }
+        @keyframes subir {
+            0% {
+                transform: translateY(100vh);
+            }
+            to{
+                transform: translateY(0vh);
+            }
+            
+        }
+        .box{
+            background-color: #aaaaaa;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 20px solid #faaabb;
+            font-size: 4rem;
+            flex-shrink: 0;
+            animation: rotacao 1s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+        }
+        .box{border-top-color: #00ff00;
+             border-right-color: #0000ff;
+             border-bottom-color: #ff0000;
+             border-left-color: #ffff00;
+        
+        }
+
+        @keyframes rotacao {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+            
+        }
+            
+            
+            
+        
+    </style>
+</head>
+<body>
+    <div class="Voltar">
+        <a href="./index.html"> <img src="./imgs/voltar.png" alt="Voltar" style="width: 40px;"></a>
+    </div>
+    
+    <div class="rocket" id="foguete">🚀</div>
+    <div class="box" id="item2">2</div>
+    <div class="box" id="item3">3</div>
+    <div class="box" id="item4">4</div>
+</body>
+</html>

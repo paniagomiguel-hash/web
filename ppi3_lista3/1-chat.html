@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Chat</title>
+    <style>
+        .chat{
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            border: 1px solid #cccccc;
+            height: 90vh;
+            width: 30vw;
+            padding: 20px;
+            border-radius: 10px;
+
+        }
+        .user1{
+            width: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            float: left;
+            margin-top: 10px;
+            
+        }
+        .box, .msg{
+            border: 1px solid #cccccc;
+            border-radius: 10px;
+            height: 90px;
+            
+        }
+        .box2{
+            border: 1px solid #cccccc;
+            border-radius: 10px;
+            height: 90px;
+            background-color: #bbf5bb;
+            
+        }
+        span{
+            font-size: 13px;
+            font-style: italic;
+            color: #8b8b8b;
+            margin-left: 20px;
+        }
+        .hour1{
+            position: relative;
+            float: right;
+            margin-right: 20px;
+        }
+        .hour2{
+            position: relative;
+            float: right;
+            left: 210px;
+            margin-top: 50px;
+ 
+
+        }
+        .text1{
+            font-size: 20px;
+        }
+        .text2{
+            font-size: 20px;
+            position: relative;
+            float: right;
+            margin-right: 20px;
+        }
+
+        .user2{
+            width: 66px;
+            border-radius: 50%;
+            object-fit: cover;
+            float: right;
+            margin-right: 15px;
+            margin-top: 12px;
+        }
+        textarea {
+            resize: none;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #cccccc;
+            padding: 10px;
+            height: 130px;
+            border-radius: 10px;
+        }
+        .msg{
+            margin: 50px auto;
+            padding: 20px;
+            height: 170px;
+        }
+        #mensagem{
+            font-size: 22px;
+        }
+        input[type="submit"] {
+            position: relative;
+            float: right;
+            background-color: rgb(63, 155, 63);
+            color: white;
+            padding: 12px 25px;
+            border: none; 
+            border-radius: 5px;         
+            font-size: 16px;            
+            cursor: pointer;
+            transition: 0.3s;
+            margin-right: 20px;
+            margin-top: 5px;
+        }
+        input[type="submit"]:hover {
+            background-color: rgb(44, 119, 44);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chat">
+
+        <span>Pedro Silva</span>
+        <div class="box">
+            <img src="./imgs/fotoPerfil1.jpg" alt="FotoUser1" class="user1">
+            <p class="text1">Olá, tudo bem?</p>
+            <span class="hour1">00:50</span>
+        </div>
+
+        <span>Eu</span>
+        <div class="box2">
+            <img src="./imgs/fotoPerfil2.jpg" alt="FotoUser2" class="user2">
+            <p class="text2">Estou bem sim, e você?</p>
+            <span class="hour2">00:55</span>
+        </div>
+
+        <span>Pedro Silva</span>
+        <div class="box" style="height: 120px;">
+            <img src="./imgs/fotoPerfil1.jpg" alt="FotoUser1" class="user1" style="margin-top: 22px;">
+            <p class="text1">Vamos sair hoje? Sabe, conversar e lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <span class="hour1" style="bottom: 15px;">01:01</span>
+        </div>
+
+        <span>Eu</span>
+        <div class="box2">
+            <img src="./imgs/fotoPerfil2.jpg" alt="FotoUser2" class="user2">
+            <p class="text2">Criatura.......</p>
+            <span class="hour2" style="margin-right: 105px;">01:09</span>
+        </div>
+
+        <div class="msg" style="margin-top: 20px;">
+            <textarea name="mensagem" id="mensagem" placeholder="Digite sua mensagem" rows="5"></textarea>
+            <input type="submit" value="Enviar">
+        </div>
+
+
+    </div>
+    
+</body>
+</html>

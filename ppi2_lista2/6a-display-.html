@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Displays e Positions</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+
+        }
+        .box{
+            
+            height: 100%;
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #box1{
+            background-color: purple;
+        }
+        #box2{
+            background-color: green;
+        }
+        #box3{
+            background-color: red;
+        }
+        #box4{
+            background-color: yellow;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="box1" class="box">1</div>
+        <div id="box2" class="box">2</div>
+        <div id="box3" class="box">3</div>
+        <div id="box4" class="box">4</div>
+    </div>
+
+</body>
+</html>
+
+<!--
+    Porquê a exibição fica assim?
+
+    Começando pela div container, ela foi responsável por deixar suas divs filhas alinhadas uma em baixo da outra e com o uso de height 100vh, deixar elas ocupando todo o espaço da tela.
+
+    Além do height 100vh, dentro da box também é necessário colocar height e width em 100%, se não as boxes não irão completar toda a tela
+
+    O texto foi alinhado no centro de cada box, utilizando justify-content e align-items.
+
+    Importante reparar também que a página não permite usar o scroll do mouse para ir para baixo ou para cima, isso é devido aos comandos overflow-x e y.
+-->

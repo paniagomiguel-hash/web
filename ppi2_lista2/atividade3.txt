@@ -1,0 +1,10 @@
+Como podemos incluir CSS em documentos HTML?
+
+Para isso, existem três formas diferentes, sendo elas chamadas de inline, interna e externa.
+Mas qual é a diferença entre cada uma delas? 
+
+Inline: É quando a regra CSS é aplicada já dentro do body, mais especificamente dentro de uma tag, como por exemplo, caso eu queira alterar a cor do texto de um parágrafo em específico, é só usar: <p style="color: blue;"
+
+Interna: É quando a regra CSS é aplicada no head do html, dentro da tag <style>, e ali é possível estilizar diversos elementos diferentes, diferentemente da Inline que é individual.
+
+Externa: Nesse caso é quando a regra CSS é utilizada de um arquivo externo, muito utlizado para estilizações padrões para diversas páginas ao mesmo tempo, utilizando dentro do head a tag: <link rel="stylesheet" href="exemplo.css">

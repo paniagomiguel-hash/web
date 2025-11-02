@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>   
+   <title>Exemplo especificidade de seletores</title>
+   <style>
+      /*regra 1*/ li{color:red;}
+      /*regra 2*/ .churras{color:green;}
+      /*regra 3*/ .fruta{color:gray}
+      /*regra 4*/ li+li.churras{color: black;}
+      /*regra 5*/ .churras[draggable="true"]{color: magenta;}
+      /*regra 6*/ #lip1,#lip2,#lip3{color:blue}
+      /*regra 7*/ #lip3.fruta{color:orange}
+      /*regra 8*/ ol>li.churras#lip5{color:purple}
+   </style>
+</head>
+<body>   
+   <ol>
+   <!--item 1--> <li id="lip0">Abacaxi</li>
+   <!--item 2--> <li           class="fruta">Melão</li>
+   <!--item 3--> <li id="lip2" class="fruta">Pera</li>
+   <!--item 4--> <li id="lip3" class="fruta">Uva</li>
+   <!--item 5--> <li id="lip4" class="fruta">Maçã</li>
+   <!--item 6--> <li           class="churras">Carne</li>
+   <!--item 7--> <li           class="churras">Linguiça</li>
+   <!--item 8--> <li id="lip7" class="churras" draggable="true">Pão de alho</li>
+   </ol>   
+</body>
+</html>
+ <!--
+    Regra 1: faz todos os elementos li ficarem vermelhos.
+
+    Regra 2: faz todos os elementos da classe churras ficarem verdes.
+
+    Regra 3: faz todos os elementos da classe frutas ficarem cinzas.
+
+    Regra 4: faz com que o li que vier imediatamente após outro li com a classe churras fique preto.
+
+    Regra 5: faz com que o elemento que tiver a classe churras e conseguir ser arrastado fique com a cor magenta.
+
+    Regra 6: troca a cor dos elementos que tem os ids citados, a prioridade dos ids são maiores que classes e tags.
+
+    Regra 7: troca a cor do elemento que tiver o id #lip3 e for da classe fruta para laranja.
+
+    Regra 8: faz um elemento li que estiver diretamente dentro de um ol e que também tenha a classe churras e o id #lip5 mudar para a cor roxa. Mas nesse caso não afetará nenhum elemento.
+
+ -->

@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.fundo{
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.barco{
+    position: fixed;
+    top: 50%;
+    left: -20%;
+    width: 300px;
+    height: 200px;
+    bottom: 150px;
+    z-index: 3;
+    transform-origin: center bottom;
+    animation: barco 25s linear infinite;
+}
+
+
+.mar{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 170px;
+    background-color: #0066cc;
+    z-index: 2;
+
+}
+
+
+.mar::before, .mar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 200%;
+    height: 170px;
+    background: radial-gradient(circle, rgba(169, 213, 255, 0.521) 10%, transparent 50%);
+    border-radius: 50%;
+    animation: ondas 6s linear infinite;
+}
+
+.mar::after {
+    left: -50%;
+    animation-delay: 3s;
+}
+
+
+@keyframes barco {
+    0%   {
+        transform: translateX(0) rotate(-4deg);
+    }
+    25%  {
+        transform: translateX(25vw) rotate(4deg); 
+    }
+    50%  {
+        transform: translateX(50vw) rotate(-4deg); 
+    }
+    75%  {
+        transform: translateX(75vw) rotate(4deg); 
+    }
+    100% {
+        transform: translateX(100vw) rotate(0deg); 
+    }
+}
+
+@keyframes ondas {
+    0%   { 
+        transform: translateX(0) translateY(0); 
+    }
+    25%  { 
+        transform: translateX(-12%) translateY(5px); 
+    }
+    50%  { 
+        transform: translateX(-25%) translateY(-5px); 
+    }
+    75%  { 
+        transform: translateX(-37%) translateY(5px); 
+    }
+    100% { 
+        transform: translateX(-50%) translateY(0); 
+    }
+}
+
+.nuvem {
+    position: absolute;
+    top: 200px;
+    left: -20%;
+    width: 200px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+    box-shadow:
+        50px -20px 0 0 white,
+        100px 0px 0 0 white,
+        70px 30px 0 0 white;
+    z-index: 4;
+    animation: nuvem 25s linear infinite;
+}
+
+
+@keyframes nuvem {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(120vw); }
+}

@@ -1,0 +1,16 @@
+
+
+Regras de CSS, podem ser explicadas como uma ou várias instruções dadas a um elemento para definir seu estilo e sua aparência dentro de uma página HTML.
+
+Os seletores são nada mais do que o elemento escolhido para ser estilizado, podendo ser um id, uma class o elemento por si só, etc.
+
+Dentro desses seletores vem então suas declarações, que são os blocos de comando que vão alterar o elemento escolhido.
+
+Exemplo: Eu preciso colocar a cor cinza como cor de fundo da minha página. Para isso, usa-se o seguinte comando:
+
+<style>
+    body{
+        background-color: gray;
+    }
+</style>
+

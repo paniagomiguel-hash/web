@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Displays e Positions</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+        .container{
+            display: flex;
+            flex-direction: row;
+            
+
+        }
+        .box{
+            display: inline-block; /*Ficam um do lado do outro*/
+            width: 100px;
+            height: 100px;
+            position: static;
+            align-items: center;
+            justify-content: center;
+        }
+        #box1{
+            background-color: blue;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+        }
+        #box2{
+            background-color: green;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+        }
+        #box3{
+            background-color: red;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        #box4{
+            background-color: yellow;
+            position: fixed;
+            right: 0;
+            top: 0;
+        }
+        #box5{
+            background-color: magenta;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); 
+            z-index: -1;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="box1" class="box">1</div>
+        <div id="box2" class="box">2</div>
+        <div id="box3" class="box">3</div>
+        <div id="box4" class="box">4</div>
+        <div id="box5" class="box">5</div>
+    </div>
+
+</body>
+</html>
+
+<!--
+    Porquê a exibição fica assim?
+
+    A box do centro, conseguiu se manter no centro da tela por conta do transform, e também do top e left.
+
+    Para posicionar as outras boxes no canto, apenas é necessário colocar a posição delas em 0.
+
+-->

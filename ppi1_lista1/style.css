@@ -1,0 +1,70 @@
+/* Fonte e cores gerais */
+* {
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(233, 233, 233); /* fundo da página */
+    color: rgb(44, 44, 44); /* cor do texto principal */
+    margin: 0;
+    padding: 0;
+}
+
+/* Tabelas */
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 9px; /* espaçamento */
+}
+
+/* Links do menu */
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #aaf0ff;
+    }
+
+/* Formulários */
+form {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+input[type="text"], input[type="email"], textarea, select {
+    width: 100%; /* ocupa toda a largura do formulário */
+    padding: 10px;
+    margin-bottom: 25px; /* deixa os campos um pouco mais separados */
+    border: 1px solid #ccc; /* deixa a borda dos campos do formulário mais sutis, sem ser aquele preto, que fica muito forte */
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* garante que padding não encoste na borda do formulário */
+}
+
+textarea {
+    resize: vertical; /* permite apenas ajuste vertical, não horizontal, para não quebrar a borda do formulário */
+}
+input[type="submit"] {
+    background-color: rgb(63, 155, 63); /* fundo */
+    color: white; /* texto */
+    padding: 12px 25px;
+    border: none; /* tira a borda que vem por padrão do form */
+    border-radius: 5px;         
+    font-size: 16px;            
+    cursor: pointer; /* muda o cursor ao passar o mouse, para visualizar melhor que o campo pode ser clicado */
+    transition: 0.3s; /* melhor efeito quando passar o mouse em cima */
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(44, 119, 44);  /* cor muda quando passar o mouse */
+}

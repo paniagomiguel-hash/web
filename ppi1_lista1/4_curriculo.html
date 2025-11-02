@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Currículo Miguel</title>
+    <style>
+        
+        nav {
+            background-color: #333;
+            padding: 10px;
+            position: fixed; /* fixa o menu no topo */
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+            color: #aaf0ff;
+        }
+        a {
+            color: black;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        a:hover{
+            text-decoration: underline;
+            color:cadetblue;
+        }
+        section {
+            padding: 40px 20px 40px; /* espaço para não esconder o título sob o menu fixo */
+            
+        }
+        details {
+            background-color: #f2f2f2;
+            border-radius: 8px;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+        }
+
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .info {
+            margin-left: 170px; /* ajusta o texto ao lado da imagem */
+            line-height: 1.4;
+            font-size: 20px;
+        }
+        img {
+            float: left;
+            margin-right: 10px;
+            width: 150px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#Apresentacao">Apresentação</a>
+        <a href="#FormacaoAcademica">Formação Acadêmica</a>
+        <a href="#ExperienciaProfissional">Experiência Profissional</a>
+        <a href="#Cursos">Cursos e Certificações</a>
+        <a href="#Habilidades">Habilidades</a>
+        <a href="#Idiomas">Idiomas</a>
+        <a href="#Grade">Grade de Horários</a>
+    </nav>
+    <section id="Apresentacao">
+        <h1>Currículo Profissional</h1>
+        <details open>
+            <summary>Apresentação</summary>
+            <img src="./imgs/MiguelImg.jpeg" alt="Miguel">
+            <div class="info">
+            <p><b>Nome completo</b>: Miguel Paniago Flamini</p>
+            <p><b>Telefone</b>: <a href="tel:+5547999615667">(47) 99961-5667</a></p>
+            <p><b>E-mail</b>: <a href="mailto:paniagomiguel@gmail.com">paniagomiguel@gmail.com</a></p>
+            <p><b>LinkedIn</b>: <a href="https://www.linkedin.com/in/miguel-paniago-flamini-83982a2b3/" target="_blank"> Miguel Paniago Flamini</a></p>
+            <p><b>Endereço</b>: Gaspar - Santa Catarina</p>
+            </div>
+            
+    
+        <h2>Objetivo Profissional</h2>
+        <p>Estudante de Análise e Desenvolvimento de Sistemas com experiência em 
+        atendimento e atividades administrativas nos setores financeiro e educacional. Busco 
+        oportunidade para aplicar habilidades organizacionais, de comunicação e tecnologia, 
+        contribuindo para o crescimento e eficiência da equipe.</p>
+    
+        </details>
+    
+    </section>
+
+    <section id="FormacaoAcademica">
+        <details open>
+            <summary>Formação Acadêmica</summary>
+            <ul>
+                <li><strong>Tecnólogo em Análise e Desenvolvimento de Sistemas</strong> - IFSC Gaspar 
+                    <br>○ Início: 03/2025 - Previsão: 2028 </li><br>
+                <li><strong>Ensino Médio Completo</strong> - EEB Arnoldo Agenor Zimmermann 
+                    <br>○ Conclusão: 2024</li>
+            </ul>
+        </details>
+    </section>
+    
+    <section id="ExperienciaProfissional">
+        <details open>
+            <summary>Experiência Profissional</summary>
+                <p><strong>Jovem Aprendiz Administrativo</strong> - <mark style="background-color: lightblue">Sicredi Vale Litoral SC</mark> - Gaspar/SC (<em>08/2024 - Atual</em>) 
+                <br>○ Apoio no atendimento, organização e digitalização de documentos. 
+                <br>○ Auxílio no controle de processos administrativos e suporte à equipe.</p>
+                <br>
+                <span><strong>Estagiário</strong> - <mark style="background-color: lightblue">CE Caminho dos Sonhos</mark> - Aurora/SC (<em>07/2023 - 03/2024</em>)
+                <br>○ Apoio a professores de sala e a alunos com necessidades especiais. 
+                <br>○ Acompanhamento individual de alunos.</span>
+                
+        </details>
+    </section>
+    
+    
+
+    <section id="Cursos">
+        <details open>
+            <summary>Cursos e Certificações</summary>
+            <ul>
+                <li>Certificação Profissional ANBIMA CPA-<sub>10</sub></li>
+                <li>Movimento Futuro Orloski - Formação Comportamental</li>
+                <li>Secretaria Municipal de Educação de Aurora - Capacitação de Professores</li>
+                <li>Corpo de Bombeiros Militar de SC - Curso Básico de Atendimento a 
+                    Emergências (CBAE) </li>
+            </ul>
+            
+        </details>
+    </section>
+
+    <section id="Habilidades">
+        <details open>
+            <summary>Habilidades</summary>
+            <ul>
+                <li><strong>Técnicas</strong>: Noções básicas de programação em linguagem C, Pacote Office 
+                            (Word, Excel, PowerPoint), Banco de dados SQL.</li>
+                <li><strong>Comportamentais</strong>: Boa comunicação, organização, proatividade, atenção a 
+                            detalhes, trabalho em equipe.</li>
+            </ul>
+            
+        </details>
+    
+    </section>
+
+    <section id="Idiomas">
+        <details open>
+            <summary>Idiomas</summary>
+            <ul>
+                <li><b>Inglês</b>: Intermediário.</li>
+                <li><b>Espanhol</b>: Básico.</li>
+            </ul>
+            
+        </details>
+    
+    </section>
+
+    <section id="Grade">
+        <details open>
+            <summary>Minha Grade de Horários</summary>
+            <table>
+                <tr style="background-color: lightslategrey; color: white;">
+                    <th>Matéria</th>
+                    <th>Dia da Semana</th>
+                    <th>Horário</th>
+                </tr>
+                <tr>
+                    <td>Engenharia de Software</td>
+                    <td>Terça-Feira</td>
+                    <td>18h30 - 22h30</td>
+                </tr>
+                <tr>
+                    <td>Programação Para Internet</td>
+                    <td>Quinta-Feira</td>
+                    <td>18h30 - 22h30</td>
+                </tr>
+                <tr>
+                    <td>Programação Estruturada</td>
+                    <td>Sexta-Feira</td>
+                    <td>18h30 - 22h30</td>
+                </tr>
+            </table>
+        </details>
+    
+    </section>
+</body>
+</html>

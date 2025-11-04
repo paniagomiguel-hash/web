@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .topo{
+            display: flex;
+            flex-direction: row;
+            height: 150px;
+            width: 100%;
+            background-color: #272727;
+        }
+        .c1, .c2, .c3{
+            margin-top: 70px;
+            height: 50px;
+            width: 50px;
+            background-color: #2579e7;
+            border-radius: 50%;
+            float: left;
+            margin-left: 15px;
+
+        }
+        .c1{
+            margin-left: 50px;
+        }
+        .container{
+            height: 100vh;
+            width: 100vw;
+            display: grid;
+            grid-template-areas: 
+            "sidebar header header header header header header header header header header header header header"
+            "sidebar main main main main main main main main main main main main main"
+            "sidebar main main main main main main main main main main main main main"
+            "sidebar main main main main main main main main main main main main main"
+            "sidebar main main main main main main main main main main main main main"
+            "sidebar main main main main main main main main main main main main main"
+            "sidebar main main main main main main main main main main main main main"
+            "sidebar footer footer footer footer footer footer footer footer footer footer footer footer footer"
+            ;
+            font-size: 1rem;
+        }
+        .header{
+            grid-area: header;
+            background-color: #0274f7;
+        }
+        .main{
+            grid-area: main;
+            background-color: #740bd6;
+        }
+        .sidebar{
+            grid-area: sidebar;
+            background-color: #fc7922;
+        }
+        .footer{
+            grid-area: footer;
+            background-color: #0062d3;
+        }
+        .box p{
+            text-align: center;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="topo">
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+    </div>
+    <div class="container">
+        <div class="box header"><p>CABEÇALHO</p></div>
+        <div class="box main"><p>CONTEÚDO</p></div>
+        <div class="box sidebar"><p>NAVEGAÇÃO</p></div>
+        <div class="box footer"><p>RODAPÉ</p></div>
+    </div>
+</body>
+</html>

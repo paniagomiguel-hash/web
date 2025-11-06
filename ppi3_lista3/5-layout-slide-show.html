@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Slide Show</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 24px;
+            width: 100%;
+            max-width: 1100px;
+            justify-content: center;
+            flex-wrap: nowrap;
+        }
+
+        .box {
+            position: relative; /* necessário para botar o círculo dentro */
+            flex: 0 0 100px;
+            height: 500px;
+            border-radius: 50px;
+            overflow: hidden;
+            flex-shrink: 0;
+            transition: 0.5s ease;
+        }
+
+        .box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .box:hover {
+            flex-grow: 3;
+            border-radius: 50px;
+        }
+
+        .circulo {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border-radius: 50%;
+            transition: 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }   
+
+        .box:hover .circulo {
+            left: 20px;
+            transform: translateX(0);
+        }
+
+    </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="box">
+      <img src="./imgs/paisagem1.jpeg" alt="Paisagem 1">
+      <div class="circulo">⛰️</div>
+    </div>
+    <div class="box">
+      <img src="./imgs/paisagem2.jpg" alt="Paisagem 2">
+      <div class="circulo">⛰️</div>
+    </div>
+    <div class="box">
+      <img src="./imgs/paisagem3.jpg" alt="Paisagem 3">
+      <div class="circulo">⛰️</div>
+    </div>
+    <div class="box">
+      <img src="./imgs/paisagem4.avif" alt="Paisagem 4">
+      <div class="circulo">⛰️</div>
+    </div>
+    <div class="box">
+      <img src="./imgs/paisagem5.jpeg" alt="Paisagem 5">
+      <div class="circulo">⛰️</div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout GRID</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            gap: 10px;
+            height: 100vh;
+            width: 100vw;
+            display: grid;
+            grid-template-areas: 
+            "box1 box1 box1 box1"
+            "box2 box3 box3 box4"
+            "box5 box3 box3 box6"
+            "box5 box7 box7 box7"            
+            ;
+        }
+        .box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+        }
+        .box1{
+            grid-area: box1;
+            background-color: #ffed86;
+        }
+        .box3{
+            grid-area: box3;
+            background-color: #ffed86;
+        }
+        .box5{
+            grid-area: box5;
+            background-color: #ffed86;
+        }
+        .box7{
+            grid-area: box7;
+            background-color: #ffed86;
+        }
+        .box2{
+            grid-area: box2;
+            background-color: #f14e69;
+        }
+        .box4{
+            grid-area: box4;
+            background-color: #f14e69;
+        }
+        .box6{
+            grid-area: box6;
+            background-color: #f14e69;
+        }
+        .box p{
+            text-align: center;
+            color: #000000;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box box1"><p>1</p></div>
+        <div class="box box2"><p>2</p></div>
+        <div class="box box3"><p>3</p></div>
+        <div class="box box4"><p>4</p></div>
+        <div class="box box5"><p>5</p></div>
+        <div class="box box6"><p>6</p></div>
+        <div class="box box7"><p>7</p></div>
+    </div>
+</body>
+</html>

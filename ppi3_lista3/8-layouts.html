@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Layouts</title>
+<style>
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    width: 100%;
+    height: 100vh;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 80px 1fr;
+    gap: 12px;
+  }
+
+  .top-left {
+    background: #f4b940;
+    border-radius: 4px;
+  }
+  .top-right {
+    background: #d9f0ef;
+    border-radius: 4px;
+  }
+
+  .big-left {
+    background: #f6a67f;
+    border-radius: 6px;
+  }
+
+  .right {
+    display: grid;
+    grid-template-rows: 80px 80px 1fr;
+    gap: 10px;
+  }
+
+  .circles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .dot {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+  }
+  .dot.a { background: #cbe9ff; }
+  .dot.b { background: #dff1c6; }
+  .dot.c { background: #f6d1e0; }
+  .dot.d { background: #ffd9a8; }
+  .dot.e { background: #ffb84d; }
+
+  .middle {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+  }
+
+  .small-blue {
+    background: #a8c9ea;
+    border-radius: 4px;
+  }
+
+  .bottom {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+  }
+
+  .pink {
+    background: #f7bfb7;
+    border-radius: 6px;
+  }
+
+  .green {
+    background: #cde39e;
+    border-radius: 6px;
+  }
+  .container {
+  display: grid;
+  grid-template-areas:
+  "top-left top-right"
+  "big-left right";
+  gap: 10px;
+}
+
+
+  .top-left { grid-area: top-left; }
+  .top-right { grid-area: top-right; }
+  .big-left { grid-area: big-left; }
+  .right { grid-area: right; }
+
+
+  @media screen and (max-width: 500px) {
+    .container{
+        grid-template-areas: 
+        "top-left"
+        "top-right"
+        "big-left"
+        "right"
+        "circles"
+        "middle"
+        "bottom"
+        ;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="top-left"></div>
+    <div class="top-right"></div>
+
+    <div class="big-left"></div>
+
+    <div class="right">
+      <div class="circles">
+        <div class="dot a"></div>
+        <div class="dot b"></div>
+        <div class="dot c"></div>
+        <div class="dot d"></div>
+        <div class="dot e"></div>
+      </div>
+
+      <div class="middle">
+        <div class="small-blue"></div>
+        <div class="green"></div>
+      </div>
+
+      <div class="bottom">
+        <div class="pink"></div>
+        <div class="green"></div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

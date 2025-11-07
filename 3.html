@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandeiras</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .bandeira{
+            width: 100%;
+            height: 100vh;
+            border: 5px solid #333;
+        }
+        #japao.bandeira{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+        }
+        #japao.bandeira>div.circulo{
+            width: 500px;
+            height: 500px;
+            background-color: red;
+            border-radius: 50%;
+        }
+        #alemanha.bandeira{
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            width: 100%;
+            
+        }
+        #alemanha.bandeira>div.parte1{
+            background-color: black;
+            width: 100%;
+            height: 100vh;
+        }
+        #alemanha.bandeira>div.parte2{
+            background-color: red;
+            width: 100%;
+            height: 100vh;
+        }
+        #alemanha.bandeira>div.parte3{
+            background-color: yellow;
+            width: 100%;
+            height: 100vh;
+        }
+        #holanda.bandeira{
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            width: 100%;
+            
+        }
+        #holanda.bandeira>div.parte1{
+            background-color: red;
+            width: 100%;
+            height: 100vh;
+        }
+        #holanda.bandeira>div.parte2{
+            background-color: white;
+            width: 100%;
+            height: 100vh;
+        }
+        #holanda.bandeira>div.parte3{
+            background-color: blue;
+            width: 100%;
+            height: 100vh;
+        }
+        #franca.bandeira{
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+            width: 100%;
+            
+        }
+        #franca.bandeira>div.parte1{
+            background-color: blue;
+            width: 100%;
+            height: 100vh;
+        }
+        #franca.bandeira>div.parte2{
+            background-color: white;
+            width: 100%;
+            height: 100vh;
+        }
+        #franca.bandeira>div.parte3{
+            background-color: red;
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="bandeira" id="franca">
+        <div class="parte1"></div>
+        <div class="parte2"></div>
+        <div class="parte3"></div>
+    </div>
+
+    <div class="bandeira" id="alemanha">
+        <div class="parte1"></div>
+        <div class="parte2"></div>
+        <div class="parte3"></div>
+    </div>
+
+    <div class="bandeira" id="japao">
+        <div class="circulo">
+        </div>
+    </div>
+</body>
+</html>

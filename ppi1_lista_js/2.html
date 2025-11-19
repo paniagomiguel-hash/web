@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Variáveis e Operadores</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        p {
+            background-color: #afafaf;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 5px;
+        }
+        button {
+            border: none;
+            height: 100px;
+            width: 100px;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Tipos de Variáveis e Operadores</h1>
+
+    <button onclick="Variaveis()">Clique em mim</button>
+
+    <p id="pstring"></p>
+    <p id="pnumber"></p>
+    <p id="pboolean"></p>
+    <p id="pundefined"></p>
+    <p id="pnull"></p>
+    <p id="pobject"></p>
+    <p id="parray"></p>
+
+    <p id="operacoes"></p>
+
+    <script>
+        function Variaveis() {
+            
+            let mString = " Olá";
+            let mNumber = 10;
+            let mBoolean = true;
+            let mUndefined;
+            let mNull = null;
+            let mObjeto = { nome: "Miguel", idade: 18 };
+            let mArray = [1, 2, 3];
+
+            document.getElementById("pstring").innerText = `Valor: ${mString}, Tipo: ${typeof mString}`;
+            document.getElementById("pnumber").innerText = `Valor: ${mNumber}, Tipo: ${typeof mNumber}`;
+            document.getElementById("pboolean").innerText = `Valor: ${mBoolean}, Tipo: ${typeof mBoolean}`;
+            document.getElementById("pundefined").innerText = `Valor: ${mUndefined}, Tipo: ${typeof mUndefined}`;
+            document.getElementById("pnull").innerText = `Valor: ${mNull}, Tipo: ${typeof mNull} (null é considerado objetc)`;
+            document.getElementById("pobject").innerText = `Valor: ${JSON.stringify(mObjeto)}, Tipo: ${typeof mObjeto}`;
+            document.getElementById("parray").innerText = `Valor: ${mArray}, Tipo: ${typeof mArray} (arrays são objetos)`;
+
+
+            console.log("String + Number:", mString + mNumber); // concatena
+            console.log("Boolean * Number:", mBoolean * mNumber); // true=1, false=0
+            console.log("String - Number:", mString - mNumber); // NaN
+            console.log("Number + null:", mNumber + mNull); // null = 0
+            console.log("Array + String:", mArray + mString); // array vira string
+
+            document.getElementById("operacoes").innerText = `
+                String + Number: ${mString + mNumber} (concatenação, string prevalece)
+                Boolean * Number: ${mBoolean * mNumber} (true = 1, false = 0)
+                String - Number: ${mString - mNumber} (resultado NaN, não é possível subtrair string e number)
+                Number + null: ${mNumber + mNull} (null é tratado como 0)
+                Array + String: ${mArray + mString} (array é convertido em string e concatenado)
+                `;
+        }
+    </script>
+
+</body>
+</html>

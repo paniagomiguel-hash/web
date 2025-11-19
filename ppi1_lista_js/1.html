@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O que é JavaScript?</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            background-color: #eeeeee;
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+        h1, p{
+            border-radius: 10px;
+            background-color: #aaaaaa;
+            padding: 20px;
+            margin-top: 10px;
+        }
+        #hora{
+            height: 140px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="titulo">O que é JavaScript?</h1>
+
+    <p id="a">JavaScript foi criado em <b>1995</b> para resolver um problema importante da época: as páginas da web eram totalmente estáticas e não permitiam interação. Os usuários só podiam ler o conteúdo, sem cliques dinâmicos, validações de formulários ou qualquer ação sem recarregar a página. Para tornar a web mais viva e interativa, a <i>Netscape</i> solicitou que <i>Brendan Eich</i> desenvolvesse uma linguagem que rodasse diretamente no navegador e fosse fácil de aprender. Assim surgiu o JavaScript, com a motivação de permitir que sites reagissem às ações do usuário, tornando a experiência muito mais dinâmica, intuitiva e moderna.</p>
+    
+    <p id="b">Quando o JavaScript é executado no navegador, ele roda diretamente na máquina do usuário e é responsável por interações visuais e comportamentos dinâmicos da página, como animações, validação de formulários e mudanças na interface. Já quando o JavaScript é executado no servidor, usando tecnologias como Node.js, ele roda no computador que hospeda o site e cuida de tarefas internas, como acessar banco de dados, processar informações e enviar respostas para o navegador. Ou seja, no navegador, o JavaScript cuida do que o usuário vê e interage. Já no servidor, ele cuida da lógica interna e do funcionamento por trás da aplicação.</p>
+
+    <p id="c">A sandbox no navegador é uma forma de segurança que isola o JavaScript dentro de um ambiente controlado, impedindo que ele acesse diretamente arquivos, programas ou recursos sensíveis do computador do usuário. Isso significa que o código só pode interagir com o que o navegador permite, como a página atual e alguns recursos específicos. A sandbox existe para evitar que sites maliciosos executem ações perigosas na máquina do usuário, garantindo que o JavaScript funcione de maneira segura e limitada.</p>
+
+    <p id="d">Os objetos globais como document, console e alert são ferramentas fornecidas pelo navegador para facilitar a interação com a página e com o próprio código. O objeto document permite acessar e modificar elementos da página HTML, como textos, botões e imagens. O console é usado para exibir mensagens de depuração, ajudando o programador a testar e entender o funcionamento do código. Já o alert cria uma pequena janela de aviso na tela do usuário, usada para mostrar mensagens rápidas. Esses objetos existem no ambiente do navegador e estão sempre disponíveis para o JavaScript, garantindo uma comunicação direta entre código e interface.</p>
+    <p id="hora"></p>
+
+    <script>
+        
+        console.log("Um usuário acessou a página.");
+        alert("Olá usuário! Seja bem-vindo à minha página de introdução teórica ao JavaScript!");
+        document.getElementById("hora").innerHTML = new Date().toLocaleTimeString();
+    </script>
+
+</body>
+</html>

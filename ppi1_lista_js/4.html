@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Números Aleatórios com Intervalo Personalizado(Inteiros)</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        button{
+            background-color: #3f9b3f; 
+            color: white; 
+            padding: 12px 25px;
+            border: none; 
+            border-radius: 5px;         
+            font-size: 16px;            
+            cursor: pointer;
+            transition: 0.3s; 
+            font-size: 20px;
+        }
+        button:hover {
+            background-color: #2c772c;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sorteio de números.</h1>
+
+    <label>Mínimo: </label>
+    <input type="number" id="min" value="1"><br><br>
+
+    <label>Máximo: </label>
+    <input type="number" id="max" value="100"><br><br>
+
+    <button id="b">Sortear</button>
+    <p id="res"></p>
+    <ul id="lista"></ul>
+
+    <script>
+        const b = document.getElementById("b");
+        const res = document.getElementById("res");
+        const lista = document.getElementById("lista");
+        
+        let sorteio = [];
+
+        function sortear(){
+            let min = parseInt(document.getElementById("min").value);
+            let max = parseInt(document.getElementById("max").value);
+
+            let num = Math.floor(Math.random() * (max - min + 1)) + min;
+
+            res.innerHTML = "Número sorteado: <b>" + num + "</b>";
+            
+            let existe = sorteio.find(elemento => elemento.num === num);
+
+            if (existe) {
+                existe.vezes++;
+            } else {
+                sorteio.push({
+                    num: num, vezes: 1 
+                });
+            }
+            atualizar();
+        }
+
+        function atualizar(){
+            lista.innerHTML = "";
+
+            sorteio.forEach(item =>{
+                let li = document.createElement("li");
+                li.textContent = `${item.num} foi sorteado ${item.vezes} vez/vezes`;
+                lista.appendChild(li);
+            });
+        }
+
+
+        b.addEventListener("click", sortear);
+
+        
+
+    </script>
+</body>
+</html>

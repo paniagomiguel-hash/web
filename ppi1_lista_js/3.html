@@ -93,8 +93,9 @@
             let classificacaoImc = document.getElementById("classificacao");
             let img = document.getElementById("imgPerfil");
             let categoria = Math.floor(imc);
+            let name = document.getElementById("nome").value;
 
-            resultado.innerHTML=`<p>O seu IMC é: ${imc.toFixed(2)}</p>`
+            resultado.innerHTML=`<p>${name}, o seu IMC é: ${imc.toFixed(2)}</p>`
             
             if (imc < 18.5){
                 classificacaoImc.innerHTML = `<p>Abaixo do peso!</p>`

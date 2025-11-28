@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudança de cor de fundo com clique</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+        button{
+            background-color: #494949; 
+            color: white; 
+            padding: 12px 25px;
+            border: none; 
+            border-radius: 5px;         
+            font-size: 16px;            
+            cursor: pointer;
+            transition: 0.3s; 
+            font-size: 20px;
+        }
+        button:hover {
+            background-color: #313131;
+        }
+
+    </style>
+</head>
+<body>
+    <button id="b">Alterar cor de fundo</button>
+    
+    <script>
+        let body = document.querySelector("body");
+        let b = document.getElementById("b");
+        b.addEventListener("click", ()=>{
+
+        let cor =`rgb(${randColor()}, ${randColor()}, ${randColor()})`
+        console.log(cor);
+        body.style.backgroundColor = cor;
+            
+
+        })
+
+        function randColor(){
+            r = (Math.random()*255).toFixed(0)
+            console.log(r);
+            return r
+        }
+    </script>
+</body>
+</html>

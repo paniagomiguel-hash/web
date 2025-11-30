@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Calculadora</title>
+<style>
+    body {
+        background: #b1d7e8;
+        font-family: Arial, sans-serif;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+        margin:0;
+    }
+
+    .calculadora {
+        width: 300px;
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .display {
+        background:#222;
+        color:#fff;
+        padding:22px 18px;
+        font-size:40px;
+        text-align:right;
+        border-bottom:1px solid #333;
+        min-height:64px;
+        box-sizing:border-box;
+    }
+
+    .botoes {
+        display:grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap:0;
+    }
+
+    button {
+        padding:18px;
+        font-size:20px;
+        border:1px solid #e6e6e6;
+        background:#fafafa;
+        cursor:pointer;
+        outline:none;
+    }
+
+    
+
+    .op { background:#f3f3f3; }
+    .ac { background:#f3f3f3; }
+    .igual {
+        background:#ff7f50;
+        color:white;
+        grid-row: 2 / 6;
+        align-self:stretch;
+        border-left:1px solid #0000000d;
+    }
+    .zero { grid-column: span 2; }
+
+</style>
+</head>
+<body>
+
+<div class="calculadora">
+    <div class="display" id="display">0</div>
+
+    <div class="botoes">
+        <button class="op" data-type="operator" data-value="+">+</button>
+        <button class="op" data-type="operator" data-value="-">-</button>
+        <button class="op" data-type="operator" data-value="*">×</button>
+        <button class="op" data-type="operator" data-value="/">÷</button>
+
+        <button data-type="number" data-value="7">7</button>
+        <button data-type="number" data-value="8">8</button>
+        <button data-type="number" data-value="9">9</button>
+        <button class="igual" data-type="equals" data-value="=">=</button>
+
+        <button data-type="number" data-value="4">4</button>
+        <button data-type="number" data-value="5">5</button>
+        <button data-type="number" data-value="6">6</button>
+        <button class="ac" data-type="clear" data-value="AC">AC</button>
+
+        <button data-type="number" data-value="1">1</button>
+        <button data-type="number" data-value="2">2</button>
+        <button data-type="number" data-value="3">3</button>
+
+        <button class="zero" data-type="number" data-value="0">0</button>
+        <button data-type="decimal" data-value=".">.</button>
+    </div>
+</div>
+
+<script>
+    const display = document.getElementById('display');
+
+    let atual = '';
+    let antes = '';
+    let operator = '';
+
+    function updateDisplay(value) {
+        display.textContent = value === '' ? '0' : value;
+    }
+
+    function inputNumber(digit) {
+        if (atual === '0' && digit === '0') return;
+        if (atual === '0' && digit !== '.') atual = digit;
+        else atual += digit;
+        updateDisplay(atual);
+    }
+
+    function inputDecimal() {
+        if (atual.includes('.')) return;
+        if (atual === '') atual = '0.';
+        else atual += '.';
+        updateDisplay(atual);
+    }
+
+    function clear() {
+        atual = '';
+        antes = '';
+        operator = '';
+        updateDisplay('0');
+    }
+
+    function operador(op) {
+        if (atual === '' && antes === '') return;
+        if (antes !== '' && atual !== '') {
+            compute();
+        } else if (atual !== '') {
+            antes = atual;
+        }
+        operator = op;
+        atual = '';
+    }
+
+    function compute() {
+        if (antes === '' || atual === '' || operator === '') return;
+        const a = parseFloat(antes);
+        const b = parseFloat(atual);
+        if (isNaN(a) || isNaN(b)) return;
+        let res;
+        switch (operator) {
+            case '+': res = a + b; break;
+            case '-': res = a - b; break;
+            case '*': res = a * b; break;
+            case '/': res = a / b; break;
+            default: return;
+        }
+        // remove imprecisão de ponto flutuante curta (ex: 0.1+0.2)
+        if (Number.isFinite(res)) {
+            res = Math.round(res * 1000000000) / 1000000000;
+        }
+        updateDisplay(String(res));
+        atual = String(res);
+        antes = '';
+        operator = '';
+    }
+
+    document.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const type = btn.dataset.type;
+            const value = btn.dataset.value;
+
+            if (type === 'number') {
+                inputNumber(value);
+            } else if (type === 'decimal') {
+                inputDecimal();
+            } else if (type === 'operator') {
+                operador(value);
+            } else if (type === 'equals') {
+                compute();
+            } else if (type === 'clear') {
+                clear();
+            }
+        });
+    });
+
+    // tecla Enter realiza "=" e Backspace limpa um dígito
+    window.addEventListener('keydown', (e) => {
+        if (e.key >= '0' && e.key <= '9') inputNumber(e.key);
+        else if (e.key === '.' || e.key === ',') inputDecimal();
+        else if (e.key === '+' || e.key === '-' || e.key === '*' || e.key === '/') operador(e.key);
+        else if (e.key === 'Enter') compute();
+        else if (e.key === 'Backspace') {
+            atual = atual.slice(0, -1);
+            updateDisplay(atual || '0');
+        } else if (e.key.toLowerCase() === 'c') clear();
+    });
+</script>
+
+</body>
+</html>

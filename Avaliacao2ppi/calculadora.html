@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Calculadora</title>
+    <style>
+        body {
+            background: #b1d7e8;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .calculadora {
+            width: 300px;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .display {
+            background: #222;
+            color: #fff;
+            padding: 22px 18px;
+            font-size: 40px;
+            text-align: right;
+            border-bottom: 1px solid #333;
+            min-height: 64px;
+            box-sizing: border-box;
+        }
+
+        .botoes {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+        }
+
+        button {
+            padding: 18px;
+            font-size: 20px;
+            border: 1px solid #e6e6e6;
+            background: #fafafa;
+            cursor: pointer;
+            outline: none;
+        }
+
+
+
+        .op {
+            background: #f3f3f3;
+        }
+
+        .ac {
+            background: #f3f3f3;
+        }
+
+        .igual {
+            background: #ff7f50;
+            color: white;
+            grid-row: 2 / 6;
+            align-self: stretch;
+            border-left: 1px solid #0000000d;
+        }
+
+        .zero {
+            grid-column: span 2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculadora">
+        <div class="display" id="display">0</div>
+
+        <div class="botoes">
+            <button class="op" data-type="operator" data-value="+">+</button>
+            <button class="op" data-type="operator" data-value="-">-</button>
+            <button class="op" data-type="operator" data-value="*">×</button>
+            <button class="op" data-type="operator" data-value="/">÷</button>
+
+            <button data-type="number" data-value="7">7</button>
+            <button data-type="number" data-value="8">8</button>
+            <button data-type="number" data-value="9">9</button>
+            <button class="igual" data-type="equals" data-value="=">=</button>
+
+            <button data-type="number" data-value="4">4</button>
+            <button data-type="number" data-value="5">5</button>
+            <button data-type="number" data-value="6">6</button>
+
+
+            <button data-type="number" data-value="1">1</button>
+            <button data-type="number" data-value="2">2</button>
+            <button data-type="number" data-value="3">3</button>
+
+            <button class="zero" data-type="number" data-value="0">0</button>
+            <button class="ac" data-type="clear" data-value="AC">AC</button>
+            <button data-type="decimal" data-value=".">.</button>
+
+        </div>
+    </div>
+
+    <script>
+        const display = document.getElementById('display');
+        let expressao = '';
+
+        function visor() {
+            display.textContent = expressao || '0';
+        }
+
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const type = btn.dataset.type;
+                const value = btn.dataset.value;
+
+                if (type === 'number' || type === 'operator' || type === 'decimal') {
+                    expressao += value;
+                    visor();
+                }
+
+                else if (type === 'clear') {
+                    expressao = '';
+                    visor();
+                }
+
+                else if (type === 'equals') {
+                    try {
+                        expressao = String(eval(expressao));
+                        visor();
+                    } catch {
+                        expressao = 'Erro';
+                        visor();
+                        expressao = '';
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

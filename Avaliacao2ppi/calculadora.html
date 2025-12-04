@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             background: #b1d7e8;
@@ -36,8 +37,6 @@
 
         .botoes {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 0;
         }
 
         button {
@@ -49,12 +48,7 @@
             outline: none;
         }
 
-
-
-        .op {
-            background: #f3f3f3;
-        }
-
+        .op,
         .ac {
             background: #f3f3f3;
         }
@@ -63,8 +57,9 @@
             background: #ff7f50;
             color: white;
             grid-row: 2 / 6;
-            align-self: stretch;
-            border-left: 1px solid #0000000d;
+            /* ocupa da linha 2 até a 5 */
+            grid-column: 4;
+            /* força ele a ficar na quarta coluna */
         }
 
         .zero {
@@ -74,39 +69,36 @@
 </head>
 
 <body>
-
     <div class="calculadora">
         <div class="display" id="display">0</div>
 
         <div class="botoes">
-            <button class="op" data-type="operator" data-value="+">+</button>
-            <button class="op" data-type="operator" data-value="-">-</button>
-            <button class="op" data-type="operator" data-value="*">×</button>
-            <button class="op" data-type="operator" data-value="/">÷</button>
+            <button class="op">+</button>
+            <button class="op">-</button>
+            <button class="op">×</button>
+            <button class="op">÷</button>
 
-            <button data-type="number" data-value="7">7</button>
-            <button data-type="number" data-value="8">8</button>
-            <button data-type="number" data-value="9">9</button>
-            <button class="igual" data-type="equals" data-value="=">=</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class="igual">=</button>
 
-            <button data-type="number" data-value="4">4</button>
-            <button data-type="number" data-value="5">5</button>
-            <button data-type="number" data-value="6">6</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
 
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
 
-            <button data-type="number" data-value="1">1</button>
-            <button data-type="number" data-value="2">2</button>
-            <button data-type="number" data-value="3">3</button>
-
-            <button class="zero" data-type="number" data-value="0">0</button>
-            <button class="ac" data-type="clear" data-value="AC">AC</button>
-            <button data-type="decimal" data-value=".">.</button>
-
+            <button class="zero">0</button>
+            <button class="ac">AC</button>
+            <button>.</button>
         </div>
     </div>
 
     <script>
-        const display = document.getElementById('display');
+        const display = document.getElementById("display");
         let expressao = '';
 
         function visor() {
@@ -115,22 +107,17 @@
 
         document.querySelectorAll('button').forEach(btn => {
             btn.addEventListener('click', () => {
-                const type = btn.dataset.type;
-                const value = btn.dataset.value;
+                const value = btn.textContent;
 
-                if (type === 'number' || type === 'operator' || type === 'decimal') {
-                    expressao += value;
-                    visor();
-                }
-
-                else if (type === 'clear') {
+                if (value === 'AC') {
                     expressao = '';
                     visor();
                 }
-
-                else if (type === 'equals') {
+                else if (value === '=') {
                     try {
-                        expressao = String(eval(expressao));
+                        // Substitui × e ÷ pelos símbolos que o eval entende
+                        const calculo = expressao.replace(/×/g, '*').replace(/÷/g, '/');
+                        expressao = String(eval(calculo));
                         visor();
                     } catch {
                         expressao = 'Erro';
@@ -138,10 +125,13 @@
                         expressao = '';
                     }
                 }
+                else {
+                    expressao += value;
+                    visor();
+                }
             });
         });
     </script>
-
 </body>
 
 </html>
